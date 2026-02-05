@@ -18,10 +18,12 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 public class KafkaConsumerConfig {
 	
 	private static final String CA_PEM_LOCATION =
-	        "C:/Users/kumar/OneDrive/Desktop/CustPoint/restfulwebservices/src/main/resources/kafka/ca.pem";
+	        "/etc/secrets/ca.pem";
 
 	private static final String SVC_PEM_LOCATION =
-	        "C:/Users/kumar/OneDrive/Desktop/CustPoint/restfulwebservices/src/main/resources/kafka/svc.pem";
+	        "/etc/secrets/svc.pem";
+
+		//fjfwe
 
 //	private static final String KAFKA_KEY_PATH =
 //	        "C:/Users/kumar/OneDrive/Desktop/CustPoint/restfulwebservices/src/main/resources/kafka/service.key";

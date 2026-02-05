@@ -15,10 +15,10 @@ import com.fasterxml.jackson.databind.deser.std.StringDeserializer;
 public class KafkaConsumerConfig2 {
 	
 	private static final String CA_PEM_LOCATION =
-	        "C:/Users/kumar/OneDrive/Desktop/CustPoint/restfulwebservices/src/main/resources/kafka/ca.pem";
+	        "/etc/secrets/ca.pem";
 
 	private static final String SVC_PEM_LOCATION =
-	        "C:/Users/kumar/OneDrive/Desktop/CustPoint/restfulwebservices/src/main/resources/kafka/svc.pem";
+	        "/etc/secrets/svc.pem";
 	
 	@Bean
 	public ConsumerFactory<String, String> consumerFactory() throws Exception {
