@@ -20,7 +20,7 @@ public class KafkaConsumerConfig2 {
 	private static final String SVC_PEM_LOCATION =
 	        "C:/Users/kumar/OneDrive/Desktop/CustPoint/restfulwebservices/src/main/resources/kafka/svc.pem";
 	
-	//@Bean
+	@Bean
 	public ConsumerFactory<String, String> consumerFactory() throws Exception {
 		
 		
@@ -55,7 +55,7 @@ public class KafkaConsumerConfig2 {
 	    return new DefaultKafkaConsumerFactory<>(props);
 	}
 
-    //@Bean
+@Bean
     public ConcurrentKafkaListenerContainerFactory<String, String>
     kafkaListenerContainerFactory() throws Exception {
 
