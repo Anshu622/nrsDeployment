@@ -42,7 +42,7 @@ public class PointServiceImpl implements PointService{
 		customerRepository.findByCustomerId(customerId).orElseThrow(() -> new CustomerNotFoundException("Customer not found with this userID :"+ customerId));
 		return pointRepository.findByCustomerId(customerId).orElseGet(() -> {
 		    Point p = new Point();
-		    p.setCustomer(customerId);
+		    p.setCustomerId(customerId);
 		    p.setTotalPoint(0);
 		    return p;
 		});
@@ -78,7 +78,7 @@ public class PointServiceImpl implements PointService{
 	    Point poi = pointRepository.findByCustomerId(customerId)
 	            .orElseGet(() -> {
 	                Point p = new Point();
-	                p.setCustomer(customerId);
+	                p.setCustomerId(customerId);
 	                p.setTotalPoint(0);
 	                return p;
 	            });
