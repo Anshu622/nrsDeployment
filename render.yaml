@@ -1,0 +1,32 @@
+services:
+  # Web Service
+  - type: web
+    name: restfulwebservices
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: PORT
+        value: 8085
+      # Database configuration (use Render's managed PostgreSQL or external MySQL)
+      - key: SPRING_DATASOURCE_URL
+        value: ${DATABASE_URL}
+      - key: SPRING_DATASOURCE_USERNAME
+        value: ${DATABASE_USER}
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: ${DATABASE_PASSWORD}
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
+      - key: SPRING_JPA_DATABASE_PLATFORM
+        value: org.hibernate.dialect.MySQLDialect
+
+databases:
+  # If you want to use Render's managed PostgreSQL instead of external MySQL
+  - name: restfulwebservices-db
+    databaseName: restfulwebservices
+    user: restfulwebservices
+    plan: free
